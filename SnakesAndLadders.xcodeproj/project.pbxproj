@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		95B9250A1DCE9D6200EDFFB0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B925091DCE9D6200EDFFB0 /* main.m */; };
+		95B925121DCE9ED900EDFFB0 /* DSix.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B925111DCE9ED900EDFFB0 /* DSix.m */; };
+		95B925151DCEA04700EDFFB0 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B925141DCEA04700EDFFB0 /* Player.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,10 @@
 /* Begin PBXFileReference section */
 		95B925061DCE9D6200EDFFB0 /* SnakesAndLadders */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SnakesAndLadders; sourceTree = BUILT_PRODUCTS_DIR; };
 		95B925091DCE9D6200EDFFB0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		95B925101DCE9ED900EDFFB0 /* DSix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSix.h; sourceTree = "<group>"; };
+		95B925111DCE9ED900EDFFB0 /* DSix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSix.m; sourceTree = "<group>"; };
+		95B925131DCEA04700EDFFB0 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		95B925141DCEA04700EDFFB0 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				95B925091DCE9D6200EDFFB0 /* main.m */,
+				95B925101DCE9ED900EDFFB0 /* DSix.h */,
+				95B925111DCE9ED900EDFFB0 /* DSix.m */,
+				95B925131DCEA04700EDFFB0 /* Player.h */,
+				95B925141DCEA04700EDFFB0 /* Player.m */,
 			);
 			path = SnakesAndLadders;
 			sourceTree = "<group>";
@@ -120,6 +130,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				95B9250A1DCE9D6200EDFFB0 /* main.m in Sources */,
+				95B925151DCEA04700EDFFB0 /* Player.m in Sources */,
+				95B925121DCE9ED900EDFFB0 /* DSix.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
