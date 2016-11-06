@@ -10,11 +10,14 @@
 
 @implementation Player
 
-- (instancetype)init
+- (instancetype)initWithName
 {
     self = [super init];
     if (self) {
+        NSLog(@"Enter your name:");
+        _name = [self input];
         _currentSquare = 0;
+        //key to represent start places of ladders or snakes
         NSArray *key = @[[NSNumber numberWithInt:4],
                          [NSNumber numberWithInt:9],
                          [NSNumber numberWithInt:17],
@@ -28,6 +31,7 @@
                          [NSNumber numberWithInt:95],
                          [NSNumber numberWithInt:99]
                          ];
+        //final positions relating to order of keys
         NSArray *endSquare = @[[NSNumber numberWithInt:14],
                                [NSNumber numberWithInt:31],
                                [NSNumber numberWithInt:7],
@@ -41,46 +45,78 @@
                                [NSNumber numberWithInt:73],
                                [NSNumber numberWithInt:78],
                                ];
+        //make dictionaries of the keys and their final positions
         _gameLogic = [NSDictionary dictionaryWithObjects:endSquare forKeys:key];
         
     }
     return self;
 }
 
--(void)checkSquare
+-(NSString *)input
 {
-    NSInteger current = self.currentSquare;
+    char inputChars[255];
+    fgets(inputChars, 255, stdin);
+    strtok(inputChars, "\n");
+    NSString *inputStr = [NSString stringWithUTF8String:inputChars];
+    return inputStr;
+}
+
+-(NSInteger)checkSquare:(NSInteger)currentSquare
+{
+    //returns the NSInteger 'current'
+    //only method to call this is self,
+    //in order to find it's permanent position for the turn
+    
+    NSInteger current = currentSquare;
     
     if ([[self.gameLogic allKeys] containsObject:[NSNumber numberWithInteger:current]])
     {
         NSNumber *key = [NSNumber numberWithInteger: current];
         NSInteger set = [[self.gameLogic objectForKey:key] integerValue];
         current = set;
-        if(set == [key integerValue])
+        
+        //print if snake or ladder.
+        if(set != [key integerValue])
         {
             NSInteger upOrDown = ([key intValue] - set);
             if(upOrDown < 0)
             {
-                NSLog(@"Player has hit a Ladder! Awww Yeah!!");
+                NSLog(@"%@ has hit a Ladder! Awww Yeah!!", self.name);
             }else{
-                NSLog(@"Player has hit a Snake. Sorry about your luck");
+                NSLog(@"%@ has hit a Snake. Sorry about your luck", self.name);
             }
-            
         }
     }
-    self.currentSquare = current;
+    return current;
 }
 
--(void)takeTurn;
+
+-(NSInteger)takeTurn:(NSInteger)playerLocation
 {
     NSLog(@"Rolling D6");
+    //the roll
     NSInteger moveCompare = [self.delegate roll];
     NSInteger currentCompare = self.currentSquare;
     
+    //move the roll amount
     currentCompare += moveCompare;
-    NSLog(@"Player moved %ld squares", moveCompare);
-    [self checkSquare];
-    NSLog(@"Player moved to square %ld", self.currentSquare);
+    //prints as the correct value, in reference to the delegate's printed roll
+    NSLog(@"%@ moved %ld squares", self.name, moveCompare);
+    
+    //find out if the square you moved to has a snake or ladder
+    //will return NSinteger
+    
+    //self.currentSquare = [self checkSquare:(self.currentSquare)];
+    self.currentSquare = [self checkSquare:currentCompare];
+    
+    //for some reason, this next line prints the current sqaure as 0
+    NSLog(@"%@ moved to square %ld", self.name, self.currentSquare);
+    return self.currentSquare;
+}
+
+-(NSInteger)roll
+{
+    return [self.delegate roll];
 }
 
 @end

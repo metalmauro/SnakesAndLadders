@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95B8C4681DCFB8D60041F1B0 /* PlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B8C4671DCFB8D60041F1B0 /* PlayerManager.m */; };
 		95B9250A1DCE9D6200EDFFB0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B925091DCE9D6200EDFFB0 /* main.m */; };
 		95B925121DCE9ED900EDFFB0 /* DSix.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B925111DCE9ED900EDFFB0 /* DSix.m */; };
 		95B925151DCEA04700EDFFB0 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B925141DCEA04700EDFFB0 /* Player.m */; };
@@ -25,6 +26,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		95B8C4661DCFB8D60041F1B0 /* PlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerManager.h; sourceTree = "<group>"; };
+		95B8C4671DCFB8D60041F1B0 /* PlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerManager.m; sourceTree = "<group>"; };
 		95B925061DCE9D6200EDFFB0 /* SnakesAndLadders */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SnakesAndLadders; sourceTree = BUILT_PRODUCTS_DIR; };
 		95B925091DCE9D6200EDFFB0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		95B925101DCE9ED900EDFFB0 /* DSix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSix.h; sourceTree = "<group>"; };
@@ -64,6 +67,8 @@
 			isa = PBXGroup;
 			children = (
 				95B925091DCE9D6200EDFFB0 /* main.m */,
+				95B8C4661DCFB8D60041F1B0 /* PlayerManager.h */,
+				95B8C4671DCFB8D60041F1B0 /* PlayerManager.m */,
 				95B925101DCE9ED900EDFFB0 /* DSix.h */,
 				95B925111DCE9ED900EDFFB0 /* DSix.m */,
 				95B925131DCEA04700EDFFB0 /* Player.h */,
@@ -131,6 +136,7 @@
 			files = (
 				95B9250A1DCE9D6200EDFFB0 /* main.m in Sources */,
 				95B925151DCEA04700EDFFB0 /* Player.m in Sources */,
+				95B8C4681DCFB8D60041F1B0 /* PlayerManager.m in Sources */,
 				95B925121DCE9ED900EDFFB0 /* DSix.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,6 +264,7 @@
 				95B9250F1DCE9D6200EDFFB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
